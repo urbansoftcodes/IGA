@@ -1,0 +1,190 @@
+.main-logo , .main-header .col-md-7.pull-right , .main-header .container-fluid , .main-header .collapse{
+    padding: 0;
+}
+.main-header .dropdown-menu{
+    top: 72px;    
+    background-color: #fff;        
+    border: 1px solid #fff;
+    border-radius: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.38);
+    border: none;
+}
+.main-header .navbar-inverse .navbar-nav .dropdown-menu  li a{
+    font-size: 12px;
+    padding: 3px 12px;	
+	line-height:20px;
+}
+.main-header .navbar-inverse .navbar-nav .dropdown-menu  li:hover a{
+	background-color:#c6000f;
+    transition: all 0.5s ease-out;
+	color: #fff;
+}
+.main-header .navbar {
+    margin-bottom: 0;
+}
+header#top .container {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background: #fff;
+    border-bottom: 3px solid #c6000f;
+    padding: 0px 90px;
+    z-index: 999;
+}
+header#top a#logo {
+    padding: 0 0px 4px;
+    margin: 2px 0 0 0;
+	height:auto;
+    display: table;
+}
+.main-logo .logo img {
+    height: auto;
+    width: 90%!important;
+}
+header#top nav >ul >li {
+    float: left;
+    list-style: none outside none;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.main-header ul.nav.navbar-nav{
+    display: table;
+    float: left;	
+	margin: 16px 0 0 60px;	
+}
+.main-header .navbar-inverse .navbar-nav>.active>a {
+    background-color: transparent;
+    color: #000;
+}
+.main-header .navbar-inverse .navbar-nav li a {
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    line-height: 72px;
+    font-weight: 500;
+    padding: 0 12px;
+}
+.language-btn {
+    float: right;
+    margin: 40px 0 0 0;
+    padding: 0;	
+}
+.language-btn a{
+    color: #c6000f;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.language-btn img {
+    width: 20px;
+}
+.language-btn li {
+    float: left;
+    list-style: none;	
+    padding: 0 10px;
+    position: relative;	
+}
+.language-btn li:nth-child(1):after {
+    content: "";
+    background-color: #5e5e5e;
+    width: 1px;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    height: 20px;
+}
+/*******header css********/
+@media only screen and (min-width:1001px)
+{
+.navbar-nav>li.dropdown:hover .dropdown-menu {
+  display: block !important; 
+}
+}
+.navbar-collapse {
+    background: none !important;
+    border: none;
+}
+.navbar-inverse {
+    background-color: transparent!important;
+    border: none!important;
+}
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+    color: #c6000f;
+    background-color: transparent;
+}
+/******header css*********/
+
+/* body .sf-menu  li.menu-item-has-children:hover >ul, body .sf-menu  li.menu-item-has-children > ul:hover { */
+	/* opacity:1!important; */
+	/* top: 40px!important; */
+/* } */
+/* body .sf-menu  li.menu-item-has-children:hover >ul li , , body .sf-menu  li.menu-item-has-children > ul:hover li{ */
+	/* opacity:1!important; */
+/* } */
+
+
+/** footer **/
+#footer{
+	width: 100%;
+	display:table;
+}
+#footer-outer {
+    width: 100%;
+    display: table;
+    z-index: 111;
+    background-color: #f4f4f4;
+    padding: 30px 0 20px;
+}
+#footer-outer #copyright p, #footer-outer #copyright p a {
+    color: #5e5e5e;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;	
+}
+#footer-outer #social {
+    display: table;
+    float: right;
+    margin: 0;	
+}
+#footer-outer #social li {
+    float: left;
+    list-style: none;
+    padding: 0 10px;	
+}
+#footer-outer #social li i {
+    color: #5e5e5e;
+    font-size: 24px;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #c6000f;
+    background-color: transparent;
+}
+.search-input{
+	display:none;	
+}
+
+#to-top{
+	position:fixed;
+	width:30px;
+	height:30px;
+	background-color:rgba(0,0,0,0.5);
+	color:#fff;
+	border-radius:100%;
+	line-height:30px;
+	vertical-align:middle;
+	right:10px;
+	bottom:20px;
+	text-align:center;
+	text-decoration:none!important;
+}
+#to-top:hover{
+	background-color:#cc0000;
+}
+#to-top i {
+	color:#fff;	
+	font-size:16px;
+}

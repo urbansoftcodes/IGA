@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://ws.mail.egov.cio.com.bh" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:tns2="http://dto.mail.egov.cio.com.bh" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://ws.mail.egov.cio.com.bh" targetNamespace="http://ws.mail.egov.cio.com.bh" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.mail.egov.cio.com.bh">
+      <xsd:import namespace="http://dto.mail.egov.cio.com.bh" />
+      <xsd:element name="sendHTMLMailWithAttachResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sendHTMLMailWithAttachReturn" nillable="true" type="tns2:WSMailResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendHTMLMail">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="serviceCode" nillable="true" type="xsd:string" />
+            <xsd:element name="mailHeader" nillable="true" type="tns2:MailHeader" />
+            <xsd:element name="mailMessage" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendHTMLMailResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sendHTMLMailReturn" nillable="true" type="tns2:WSMailResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendMail">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="serviceCode" nillable="true" type="xsd:string" />
+            <xsd:element name="mailHeader" nillable="true" type="tns2:MailHeader" />
+            <xsd:element name="mailMessage" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendMailResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sendMailReturn" nillable="true" type="tns2:WSMailResponse" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendHTMLMailWithAttach">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="serviceCode" nillable="true" type="xsd:string" />
+            <xsd:element name="mailHeader" nillable="true" type="tns2:MailHeader" />
+            <xsd:element name="mailMessage" nillable="true" type="xsd:string" />
+            <xsd:element name="attachedFiles" nillable="true" type="impl:ArrayOf_tns2_nillable_AttachedFiles" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOf_tns2_nillable_AttachedFiles">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="AttachedFiles" nillable="true" type="tns2:AttachedFiles" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://dto.mail.egov.cio.com.bh">
+      <xsd:complexType name="MailHeader">
+        <xsd:sequence>
+          <xsd:element name="bccMailIdArr" nillable="true" type="tns2:ArrayOf_xsd_nillable_string" />
+          <xsd:element name="ccMailIdArr" nillable="true" type="tns2:ArrayOf_xsd_nillable_string" />
+          <xsd:element name="fromMailIdArr" nillable="true" type="tns2:ArrayOf_xsd_nillable_string" />
+          <xsd:element name="senderPassword" nillable="true" type="xsd:string" />
+          <xsd:element name="senderUser" nillable="true" type="xsd:string" />
+          <xsd:element name="smtpHost" nillable="true" type="xsd:string" />
+          <xsd:element name="smtpPort" nillable="true" type="xsd:string" />
+          <xsd:element name="subject" nillable="true" type="xsd:string" />
+          <xsd:element name="toMailIdArr" nillable="true" type="tns2:ArrayOf_xsd_nillable_string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_xsd_nillable_string">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AttachedFiles">
+        <xsd:sequence>
+          <xsd:element name="fileContent" type="xsd:base64Binary" />
+          <xsd:element name="fileName" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="WSMailResponse">
+        <xsd:sequence>
+          <xsd:element name="errorCode" nillable="true" type="xsd:string" />
+          <xsd:element name="errorMessage" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sendMailRequest">
+    <wsdl:part name="parameters" element="impl:sendMail" />
+  </wsdl:message>
+  <wsdl:message name="sendMailResponse">
+    <wsdl:part name="parameters" element="impl:sendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendHTMLMailRequest">
+    <wsdl:part name="parameters" element="impl:sendHTMLMail" />
+  </wsdl:message>
+  <wsdl:message name="sendHTMLMailResponse">
+    <wsdl:part name="parameters" element="impl:sendHTMLMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendHTMLMailWithAttachRequest">
+    <wsdl:part name="parameters" element="impl:sendHTMLMailWithAttach" />
+  </wsdl:message>
+  <wsdl:message name="sendHTMLMailWithAttachResponse">
+    <wsdl:part name="parameters" element="impl:sendHTMLMailWithAttachResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MailWSImpl">
+    <wsdl:operation name="sendHTMLMailWithAttach">
+      <wsdl:input name="sendHTMLMailWithAttachRequest" message="impl:sendHTMLMailWithAttachRequest" />
+      <wsdl:output name="sendHTMLMailWithAttachResponse" message="impl:sendHTMLMailWithAttachResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendHTMLMail">
+      <wsdl:input name="sendHTMLMailRequest" message="impl:sendHTMLMailRequest" />
+      <wsdl:output name="sendHTMLMailResponse" message="impl:sendHTMLMailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMail">
+      <wsdl:input name="sendMailRequest" message="impl:sendMailRequest" />
+      <wsdl:output name="sendMailResponse" message="impl:sendMailResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MailWSImplSoapBinding" type="impl:MailWSImpl">
+    <wsaw:UsingAddressing wsdl:required="false" />
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendHTMLMailWithAttach">
+      <wsdlsoap:operation soapAction="sendHTMLMailWithAttach" />
+      <wsdl:input name="sendHTMLMailWithAttachRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendHTMLMailWithAttachResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendHTMLMail">
+      <wsdlsoap:operation soapAction="sendHTMLMail" />
+      <wsdl:input name="sendHTMLMailRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendHTMLMailResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMail">
+      <wsdlsoap:operation soapAction="sendMail" />
+      <wsdl:input name="sendMailRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendMailResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MailWSImplService">
+    <wsdl:port name="MailWSImpl" binding="impl:MailWSImplSoapBinding">
+      <wsdlsoap:address location="http://www.bahrain.bh:80/EGovMailService/services/MailWSImpl" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

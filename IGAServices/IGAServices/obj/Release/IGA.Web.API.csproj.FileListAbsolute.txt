@@ -1,0 +1,54 @@
+D:\IGA\IGAServices\IGAServices\bin\IGAServices.dll.config
+D:\IGA\IGAServices\IGAServices\bin\IGAServices.dll
+D:\IGA\IGAServices\IGAServices\bin\IGAServices.pdb
+D:\IGA\IGAServices\IGAServices\bin\Antlr3.Runtime.dll
+D:\IGA\IGAServices\IGAServices\bin\AutoMapper.dll
+D:\IGA\IGAServices\IGAServices\bin\Microsoft.Owin.Cors.dll
+D:\IGA\IGAServices\IGAServices\bin\Microsoft.Owin.dll
+D:\IGA\IGAServices\IGAServices\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\IGA\IGAServices\IGAServices\bin\Microsoft.Owin.Security.dll
+D:\IGA\IGAServices\IGAServices\bin\Microsoft.Owin.Security.OAuth.dll
+D:\IGA\IGAServices\IGAServices\bin\Microsoft.Web.Infrastructure.dll
+D:\IGA\IGAServices\IGAServices\bin\Newtonsoft.Json.dll
+D:\IGA\IGAServices\IGAServices\bin\Owin.dll
+D:\IGA\IGAServices\IGAServices\bin\Swashbuckle.Core.dll
+D:\IGA\IGAServices\IGAServices\bin\System.Net.Http.Formatting.dll
+D:\IGA\IGAServices\IGAServices\bin\System.Web.Http.dll
+D:\IGA\IGAServices\IGAServices\bin\System.Web.Http.WebHost.dll
+D:\IGA\IGAServices\IGAServices\bin\WebActivatorEx.dll
+D:\IGA\IGAServices\IGAServices\bin\System.Web.Cors.dll
+D:\IGA\IGAServices\IGAServices\bin\Newtonsoft.Json.xml
+D:\IGA\IGAServices\IGAServices\bin\System.Net.Http.Formatting.xml
+D:\IGA\IGAServices\IGAServices\bin\System.Web.Http.xml
+D:\IGA\IGAServices\IGAServices\bin\System.Web.Http.WebHost.xml
+D:\IGA\IGAServices\IGAServices\obj\Release\IGA.Web.API.csprojResolveAssemblyReference.cache
+D:\IGA\IGAServices\IGAServices\obj\Release\IGAServices.dll
+D:\IGA\IGAServices\IGAServices\obj\Release\IGAServices.pdb
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\IGAServices.dll.config
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\IGAServices.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\IGAServices.pdb
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Antlr3.Runtime.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\AutoMapper.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Microsoft.Owin.Cors.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Microsoft.Owin.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Microsoft.Owin.Security.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Microsoft.Web.Infrastructure.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Newtonsoft.Json.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Owin.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Swashbuckle.Core.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\System.Net.Http.Formatting.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\System.Web.Http.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\System.Web.Http.WebHost.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\WebActivatorEx.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\System.Web.Cors.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\Newtonsoft.Json.xml
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\System.Net.Http.Formatting.xml
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\System.Web.Http.xml
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\bin\System.Web.Http.WebHost.xml
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\obj\Release\IGA.Web.API.csprojAssemblyReference.cache
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\obj\Release\IGA.Web.API.csproj.CoreCompileInputs.cache
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\obj\Release\IGA.Web.API.csproj.CopyComplete
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\obj\Release\IGAServices.dll
+E:\Projects\WORKING\IGAServices (1)\IGAServices\IGAServices\obj\Release\IGAServices.pdb

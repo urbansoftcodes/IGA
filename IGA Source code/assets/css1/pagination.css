@@ -1,0 +1,55 @@
+.pagination1 {
+    width: 100%;
+    /*Width of pagination DIV. Total width should equal slider's outer width (400+10+10=420)*/
+    clear: both;
+    position: relative;
+    padding: 20px;
+    /*text-align: right;*/
+}
+
+    .pagination1 a {
+        background: #fff;
+        width: 23px;
+        line-height: 23px;
+        text-align: center;
+        line-height: 23px;
+        color: #c10e13;
+        display: inline-block;
+        margin-right: 5px;
+        margin-top: 5px;
+        font-weight: bold;
+        border: 1px solid #c10e13;
+    }
+
+    .pagination1 > span {
+        background-color: #c10e13;
+        border: 1px solid #c10e13;
+        width: 23px;
+        line-height: 23px;
+        text-align: center;
+        line-height: 23px;
+        display: inline-block;
+        margin-right: 5px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .pagination1 a:hover, .pagination1 a.selected {
+        background-color: #000;
+        border: 1px solid #000;
+    }
+
+    .pagination1 a:hover, .pagination1 a.selected {
+        background-color: #000;
+        border: 1px solid #000;
+    }
+
+    .pagination1 a.prev {
+        font-size: 0px;
+        display: none;
+    }
+
+    .pagination1 a.next {
+        font-size: 0px;
+        display: none;
+    }

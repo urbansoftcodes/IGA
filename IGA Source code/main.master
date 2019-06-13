@@ -1,0 +1,493 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="main.master.cs" Inherits="main" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <!-- Meta Tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,safari">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+
+    <!--Shortcut icon-->
+    <title>Bahrain International eGovernment Forum</title>
+    <link rel="shortcut icon" href="assets/images/small-icon.png" type="image/x-icon" />
+
+
+    <!-- include bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+
+
+    <link rel='stylesheet' href='assets/css/font-awesome.min.css?ver=4.6.3' type='text/css' media='all' />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/header.css" />
+
+    <link rel="stylesheet" href="assets/css/girish.css" />
+
+    <link rel="stylesheet" href="assets/css/main-style.css" />
+    <link rel="stylesheet" href="assets/css/siva.css">
+    <link href="assets/css/pagination.css" rel="stylesheet" />
+    <link href="#" rel="stylesheet" runat="server" id="arcss" />
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- <link rel="stylesheet" href="assets/css/countdown.css">-->
+    <link rel="stylesheet" href="assets/css/soon.css" type="text/css">
+
+    <!-- <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" media="screen" /> -->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="home page-template-default page">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="container-wrapper">
+            <!-- include header -->
+            <div id="header">
+                <!-- Header -->
+                <header id="top" class="main-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5 main-logo">
+                                <a id="logo" class="logo en-lang" href="Default.aspx">
+                                    <asp:Image ID="imgLogo" runat="server" AlternateText="iGA" CssClass="stnd default-logo dark-version" Width="70px" />
+
+                                </a>
+                            </div>
+                            <div class="col-md-7 pull-right header-menu">
+                                <nav class="navbar navbar-inverse" role="navigation">
+                                    <div class="container-fluid">
+                                        <div class="navbar-header">
+                                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                        </div>
+
+                                        <!-- Collect the nav links, forms, and other content for toggling -->
+                                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                            <ul class="nav navbar-nav">
+                                                <li class="dropdown">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                        <asp:Label ID="lbtnAbout" runat="server" Text="About Us"></asp:Label>
+
+                                                    </a>
+                                                    <%--<asp:LinkButton ID="lbtnAbout" runat="server" OnClick="lbtnAbout_Click">About Us</asp:LinkButton>--%>
+                                                    <asp:Repeater ID="dlSMenu2" runat="server" OnItemDataBound="dlSMenu2_ItemDataBound" OnItemCommand="dlSMenu2_ItemCommand">
+                                                        <HeaderTemplate>
+                                                            <ul class="dropdown-menu">
+                                                        </HeaderTemplate>
+
+                                                        <ItemTemplate>
+                                                            <li>
+                                                                <asp:Label ID="lblCategoryId" runat="server" Text='<%# Eval("CategoryId") %>' Visible="false"></asp:Label>
+                                                                <%-- <a href='Topics.aspx?c=<%# Eval("CategoryId") %>&t=<%# Eval("CategoryName") %>'>--%>
+
+                                                                <asp:LinkButton ID="lblCTitle" runat="server" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"CategoryId") %>' CommandName="view" Text='<%# Eval("CategoryName") %>'></asp:LinkButton>
+                                                                <asp:LinkButton ID="lblCTitle1" runat="server" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"CategoryId") %>' CommandName="view" Text='<%# Eval("CategoryName1") %>'></asp:LinkButton>
+
+
+
+
+
+                                                                <%--</a>--%></li>
+
+
+
+
+
+                                                        </ItemTemplate>
+                                                        <FooterTemplate>
+                                                            </ul>
+                                                        </FooterTemplate>
+
+                                                    </asp:Repeater>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                        <asp:Label ID="lbtnTopics" runat="server" Text="Topics"></asp:Label>
+
+                                                    </a>
+
+                                                    <asp:Repeater ID="dlSMenu1" runat="server" OnItemDataBound="dlSMenu1_ItemDataBound" OnItemCommand="dlSMenu1_ItemCommand">
+                                                        <HeaderTemplate>
+                                                            <ul class="dropdown-menu">
+                                                        </HeaderTemplate>
+
+                                                        <ItemTemplate>
+                                                            <li>
+                                                                <asp:Label ID="lblCategoryId" runat="server" Text='<%# Eval("CategoryId") %>' Visible="false"></asp:Label>
+                                                                <%-- <a href='Topics.aspx?c=<%# Eval("CategoryId") %>&t=<%# Eval("CategoryName") %>'>--%>
+
+                                                                <asp:LinkButton ID="lblCTitle" runat="server" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"CategoryId") %>' CommandName="view" Text='<%# Eval("CategoryName") %>'></asp:LinkButton>
+                                                                <asp:LinkButton ID="lblCTitle1" runat="server" CommandArgument='<%# DataBinder.Eval(Container.DataItem,"CategoryId") %>' CommandName="view" Text='<%# Eval("CategoryName1") %>'></asp:LinkButton>
+
+
+
+
+
+                                                                <%--</a>--%></li>
+
+
+
+
+
+                                                        </ItemTemplate>
+                                                        <FooterTemplate>
+                                                            </ul>
+                                                        </FooterTemplate>
+
+                                                    </asp:Repeater>
+
+
+
+
+
+
+
+                                                </li>
+                                                <li>
+                                                    <asp:LinkButton ID="lbtnAgenda" runat="server" OnClick="lbtnAgenda_Click">Agenda</asp:LinkButton>
+                                                </li>
+                                                <li>
+                                                    <asp:LinkButton ID="lbtnSpeakers" runat="server" OnClick="lbtn2018_Click">2018 Speakers</asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtn2018" runat="server" OnClick="lbtn2018_Click" Visible="false">2018 Speakers</asp:LinkButton>
+                                                    <asp:LinkButton ID="lbtnPSpeakers" runat="server" OnClick="lbtnPSpeakers_Click" Visible="false">Previous Speakers</asp:LinkButton>
+                                                </li>
+                                                <%--<li class="dropdown">
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+															<asp:Label ID="lbtnSpeakers" runat="server" Text="Speakers"></asp:Label>
+															</a>
+														<ul class="dropdown-menu">
+															<li>
+																<asp:LinkButton ID="lbtn2018" runat="server" OnClick="lbtn2018_Click">2018 Speakers</asp:LinkButton>
+																</li>
+															<li>
+																<asp:LinkButton ID="lbtnPSpeakers" runat="server" OnClick="lbtnPSpeakers_Click">Previous Speakers</asp:LinkButton>
+																</li>
+														</ul>
+													</li>--%>
+                                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <asp:Label ID="lbtnMedia" runat="server" Text="Media"></asp:Label>
+                                                </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <asp:LinkButton ID="lbtnNews" runat="server" OnClick="lbtnNews_Click1">News</asp:LinkButton>
+                                                        </li>
+                                                        <li>
+                                                            <asp:LinkButton ID="lbtnPhoto" runat="server" OnClick="lbtnPhoto_Click">Photo Gallery</asp:LinkButton>
+                                                        </li>
+                                                        <li>
+                                                            <asp:LinkButton ID="lbtnVideo" runat="server" OnClick="lbtnVideo_Click">Video Gallery</asp:LinkButton>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <asp:LinkButton ID="lbtnContact" runat="server" OnClick="lbtnContact_Click">Contact</asp:LinkButton></li>
+                                            </ul>
+                                            <ul class="language-btn">
+                                                <li>
+                                                    <asp:LinkButton ID="lbtnLang" runat="server" OnClick="lbtnLang_Click" CssClass="text-white">English</asp:LinkButton>
+                                                </li>
+                                                <!-- <li><a href="ar-language"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
+                                                <li class="search-img">
+                                                    <img src="assets/images/search.png" alt="search image">
+                                                </li>
+                                            </ul>
+                                            <div id="search" class="search-input">
+                                                <div>
+                                                    <asp:Panel ID="Panel1" runat="server" DefaultButton="lbtnSearch">
+                                                        <asp:TextBox ID="txtSearch" runat="server" placeholder="Search..."></asp:TextBox>
+                                                        <asp:LinkButton ID="lbtnSearch" runat="server" OnClick="lbtnSearch_Click"></asp:LinkButton>
+                                                    </asp:Panel>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- /.navbar-collapse -->
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- End Header-->
+            </div>
+            <!-- End include header -->
+            <div id="ajax-content-wrap">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- #container-wrapper -->
+        </div>
+        <div id="footer">
+            <!-- Footer -->
+            <div id="footer-outer">
+                <div class="container" runat="server" id="fcont">
+                </div>
+            </div>
+            <a id="to-top"><i class="fa fa-angle-up"></i></a>
+            <!-- End Footer -->
+        </div>
+
+        <!-- include script -->
+        <script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- <script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
+
+        <script>
+            (function () {
+                $('#carousel123').carousel({ interval: 2000 });
+                $('#carouselABC').carousel({ interval: 3600 });
+
+                $('#carousel_sponsor_1').carousel({ interval: 2000 });
+                $('#carousel_sponsor_2').carousel({ interval: 3600 });
+                $('#carousel_sponsor_3').carousel({ interval: 2000 });
+                $('#carousel_sponsor_4').carousel({ interval: 3600 });
+                $('#carousel_sponsor_5').carousel({ interval: 2000 });
+                $('#carousel_sponsor_6').carousel({ interval: 3600 });
+            }());
+
+            (function () {
+                $('.home-sponsors-row .carousel-showmanymoveone .item').each(function () {
+                    var itemToClone = $(this);
+
+                    for (var i = 1; i < 1; i++) {
+                        if (window.CP.shouldStopExecution(1)) { break; }
+                        itemToClone = itemToClone.next();
+
+                        // wrap around if at end of item collection
+                        if (!itemToClone.length) {
+                            itemToClone = $(this).siblings(':first');
+                        }
+
+                        // grab item, clone, add marker class, add to collection
+                        itemToClone.children(':first-child').clone()
+                            .addClass("cloneditem-" + (i))
+                            .appendTo($(this));
+                    }
+                    window.CP.exitedLoop(1);
+
+                });
+            }());
+            //# sourceURL=pen.js
+            (function () {
+                $('.previous-speaker-table .carousel-showmanymoveone .item').each(function () {
+                    var itemToClone = $(this);
+
+                    for (var i = 1; i < 4; i++) {
+                        if (window.CP.shouldStopExecution(1)) { break; }
+                        itemToClone = itemToClone.next();
+
+                        // wrap around if at end of item collection
+                        if (!itemToClone.length) {
+                            itemToClone = $(this).siblings(':first');
+                        }
+
+                        // grab item, clone, add marker class, add to collection
+                        itemToClone.children(':first-child').clone()
+                            .addClass("cloneditem-" + (i))
+                            .appendTo($(this));
+                    }
+                    window.CP.exitedLoop(1);
+
+                });
+            }());
+        </script>
+        <!-- home speakers carousel -->
+        <script>
+            (function () {
+                $('#home-speakers-carousel').carousel({ interval: 6000 });
+            }());
+
+            (function () {
+                $('#home-speakers-carousel.carousel-showmanymoveone .item').each(function () {
+                    var itemToClone = $(this);
+
+                    for (var i = 1; i < 4; i++) {
+                        if (window.CP.shouldStopExecution(1)) { break; }
+                        itemToClone = itemToClone.next();
+
+                        // wrap around if at end of item collection
+                        if (!itemToClone.length) {
+                            itemToClone = $(this).siblings(':first');
+                        }
+
+                        // grab item, clone, add marker class, add to collection
+                        itemToClone.children(':first-child').clone()
+							.addClass("cloneditem-" + (i))
+							.appendTo($(this));
+                    }
+                    window.CP.exitedLoop(1);
+
+                });
+            }());
+            //# sourceURL=pen.js
+        </script>
+
+
+        <script>
+            $(document).ready(function () {
+                $(".language-btn .search-img ").click(function (event) {
+                    if ($(".search-input").hasClass("search-show")) {
+                        $(".search-input").removeClass("search-show");
+                    }
+                    else {
+                        $(".search-input").addClass("search-show");
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#to-top").hide();
+                $(window).scroll(function () {
+                    var currentPosition = $(window).scrollTop();
+                    var documentHeight = $(document).height();
+                    var windowHeight = $(window).height();
+                    if ((documentHeight > windowHeight) && (currentPosition > (windowHeight / 3))) {
+                        $("#to-top").show();
+                    } else {
+                        $("#to-top").hide();
+                    }
+                });
+
+                $("#to-top").click(function () {
+                    var body = $("html, body");
+                    body.stop().animate({ scrollTop: 0 }, 500, 'swing');
+                });
+
+                $("div.fixed-text").click(function () {
+                    $("div.fixed-side-bar").toggleClass("Shown");
+                });
+
+            });
+        </script>
+        <!-- <script type='text/javascript' src="assets/js/owl.carousel.min.js"></script> -->
+        <script type='text/javascript' src='assets/js/jquery_menu.js'></script>
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <div runat="server" id="fslide"></div>
+        <!--<script defer src="assets/js/jquery.flexslider.js"></script> -->
+        <script>
+            $(document).ready(function () {
+                $(window).load(function () {
+                    $('#carousel1').flexslider({
+                        animation: "slide",
+                        controlNav: false,
+                        animationLoop: false,
+                        slideshow: false,
+                        itemWidth: 210,
+                        itemMargin: 10,
+                        asNavFor: '#slider1'
+                    });
+
+                    $('#slider1').flexslider({
+                        animation: "slide",
+                        controlNav: false,
+                        animationLoop: false,
+                        slideshow: false,
+                        sync: "#carousel1",
+                        start: function (slider) {
+                            $('body').removeClass('loading');
+                        }
+                    });
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $(window).load(function () {
+                    $('#videocarousel').flexslider({
+                        animation: "slide",
+                        controlNav: false,
+                        animationLoop: false,
+                        slideshow: false,
+                        itemWidth: 210,
+                        itemMargin: 10,
+                        asNavFor: '#videoslider'
+                    });
+
+                    $('#videoslider').flexslider({
+                        animation: "slide",
+                        controlNav: false,
+                        animationLoop: false,
+                        slideshow: false,
+                        sync: "#videocarousel",
+                        start: function (slider) {
+                            $('body').removeClass('loading');
+                        }
+                    });
+                });
+            });
+        </script>
+        <!-- object fit IE  -->
+        <script src="https://cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js"></script>
+        <script>
+            if (!Modernizr.objectfit) {
+                $('.h-speakers-img , .item .h-news-ims-sec, .peakersimg').each(function () {
+                    var $container = $(this),
+                        imgUrl = $container.find('img').prop('src');
+                    if (imgUrl) {
+                        $container
+                            .css('backgroundImage', 'url(' + imgUrl + ')')
+                            .addClass('compat-object-fit');
+                    }
+                });
+            }
+        </script>
+        <script>
+            if (!Modernizr.objectfit) {
+                $('.h-speakers-img , .peakersimg ').each(function () {
+                    var $container = $(this),
+                        imgUrl = $container.find('input').prop('src');
+                    if (imgUrl) {
+                        $container
+                            .css('backgroundImage', 'url(' + imgUrl + ')')
+                            .addClass('compat-object-fit');
+                    }
+                });
+            }
+            if (!Modernizr.objectfit) {
+                $('.newsdetailimg').each(function () {
+                    var $container = $(this),
+                        imgUrl = $container.find('img').prop('src');
+                    if (imgUrl) {
+                        $container
+                            .css('backgroundImage', 'url(' + imgUrl + ')')
+                            .addClass('compat-object-fit');
+                    }
+                });
+            }
+            if (!Modernizr.objectfit) {
+                $('.h-news-ims-sec').each(function () {
+                    var $container = $(this),
+                        imgUrl = $container.find('img').prop('src');
+                    if (imgUrl) {
+                        $container
+                            .css('backgroundImage', 'url(' + imgUrl + ')')
+                            .addClass('compat-object-fit');
+                    }
+                });
+            }
+        </script>
+
+        <!-- <script src="assets/js/soon.js"></script>-->
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPr_PaTg0NC1soJdiWfC74nnurdHRSydE"></script> -->
+
+        <!-- <script src="assets/js/custom.js"></script> -->
+        <!--<script type='text/javascript' src='assets/js/jquery_menu.js'></script> -->
+        <div runat="server" id="mcount"></div>
+        <div runat="server" id="mcontact"></div>
+
+
+    </form>
+</body>
+</html>

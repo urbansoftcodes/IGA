@@ -1,0 +1,339 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="amain.master.cs" Inherits="amain" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>CMS</title>
+
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets1/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets1/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+		<!-- page specific plugin styles -->
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="assets1/css/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="assets1/common.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets1/css/ace.min.css" class="ace-main-stylesheet"/>
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets1/css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+		<link rel="stylesheet" href="assets1/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets1/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="assets1/css/customn.css" />
+    <link href="assets1/css/acetest.css" rel="stylesheet" />
+      <link href="assets1/css/chosen.css" rel="stylesheet" />
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets1/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+		<script src="assets1/js/ace-extra.min.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets1/js/html5shiv.min.js"></script>
+		<script src="assets1/js/respond.min.js"></script>
+		<![endif]-->
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:Label ID="lblhcsrf" runat="server" Text="" Visible="false"></asp:Label>
+        <div id="navbar" class="navbar navbar-default    navbar-collapse       ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-header pull-left">
+					<a href="Default.aspx" class="navbar-brand">
+						<small>
+							Urbansoft - CMS
+						</small>
+					</a>
+
+					<button class="pull-right navbar-toggle navbar-toggle-img collapsed" type="button" data-toggle="collapse" data-target=".navbar-buttons">
+						<span class="sr-only">Toggle user menu</span>
+
+						<%--<img src="assets1/images/softmaxsolutions-logo.png" alt="soft max solutions - website and mobile app development" />--%>
+					</button>
+				</div>
+
+				<div class="navbar-buttons navbar-header pull-right  collapse navbar-collapse" role="navigation">
+					<ul class="nav ace-nav">
+						
+
+						<li class="light-blue dropdown-modal">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<%--<img class="nav-user-photo" src="assets1/images/softmaxsolutions-logo.png" alt="soft max solutions - website and mobile app development" />--%>
+								<span class="user-info">
+									<small>Welcome,</small>
+                                    <asp:Label ID="lblAdmin" runat="server" Text=""></asp:Label>
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								
+
+								<li class="divider"></li>
+
+								<li>
+                                    <asp:LinkButton ID="lbtnLogout" runat="server" OnClick="lbtnLogout_Click"><i class="ace-icon fa fa-power-off"></i>
+										Logout</asp:LinkButton>
+									
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div><!-- /.navbar-container -->
+		</div>
+
+
+        <div class="main-container ace-save-state" id="main-container">
+			<script type="text/javascript">
+			    try { ace.settings.loadState('main-container') } catch (e) { }
+			</script>
+
+			<div id="sidebar" class="sidebar responsive ace-save-state">
+				<script type="text/javascript">
+				    try { ace.settings.loadState('sidebar') } catch (e) { }
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+							<i class="ace-icon fa fa-signal"></i>
+						</button>
+
+						<button class="btn btn-info">
+							<i class="ace-icon fa fa-pencil"></i>
+						</button>
+
+						<button class="btn btn-warning">
+							<i class="ace-icon fa fa-users"></i>
+						</button>
+
+						<button class="btn btn-danger">
+							<i class="ace-icon fa fa-cogs"></i>
+						</button>
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div><!-- /.sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					
+					<li class="menu-list" style="display:none;">
+                         <asp:LinkButton ID="lbtnTypes" runat="server" CssClass="menus-item" OnClick="lbtnTypes_Click">
+						
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">
+                               Types
+							</span>
+						</asp:LinkButton>
+
+					</li>
+					
+					<li class="menu-list">
+						<asp:LinkButton ID="lbtnCategory" runat="server" CssClass="menus-item" OnClick="lbtnCategory_Click">
+						
+							<i class="menu-icon fa 	fa-pencil-square-o"></i>
+							<span class="menu-text">
+                               
+								Category
+							</span>
+						</asp:LinkButton>
+
+					</li>
+					
+                    <li class="menu-list" style="display:none;">
+						<asp:LinkButton ID="lbtnSubCategory" runat="server" CssClass="menus-item" OnClick="lbtnSubCategory_Click">
+						
+							<i class="menu-icon fa 	fa-pencil-square-o"></i>
+							<span class="menu-text">
+                               
+								Sub Category
+							</span>
+						</asp:LinkButton>
+
+					</li>
+                     <li class="menu-list" style="display:none;">
+						<asp:LinkButton ID="lbtnSCategorySub" runat="server" CssClass="menus-item" OnClick="lbtnSCategorySub_Click">
+						
+							<i class="menu-icon fa 	fa-pencil-square-o"></i>
+							<span class="menu-text">
+                               
+								Sub Category Sub
+							</span>
+						</asp:LinkButton>
+
+					</li>
+                    <li class="menu-list">
+						<asp:LinkButton ID="lbtnContents" runat="server" CssClass="menus-item" OnClick="lbtnContents_Click">
+						
+							<i class="menu-icon fa 	fa-pencil-square-o"></i>
+							<span class="menu-text">
+                               
+								Contents
+							</span>
+						</asp:LinkButton>
+                           <li class="menu-list">
+						<asp:LinkButton ID="lbtnHomeBanner" runat="server" CssClass="menus-item" OnClick="lbtnHomeBanner_Click">
+						
+							<i class="menu-icon fa 	fa-pencil-square-o"></i>
+							<span class="menu-text">
+                               
+								Mobile Home Banner
+							</span>
+						</asp:LinkButton>
+					</li>
+					<li class="menu-list">
+						<asp:LinkButton ID="lbtnEnquiries" runat="server" CssClass="menus-item" OnClick="lbtnEnquiries_Click">
+							<i class="menu-icon fa fa-cogs"></i>
+							<span class="menu-text">
+								Enquiries
+							</span>
+                           </asp:LinkButton>
+                        
+
+					</li>  
+					
+				</ul><!-- /.nav-list -->
+
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>
+
+            <div class="main-content">
+				<div class="main-content-inner">
+					<div class="page-content">
+
+
+
+
+
+
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+   
+
+                        </div><!-- /.page-content -->
+				</div>
+			</div><!-- /.main-content -->
+        <div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							&copy; Urbansoft - CMS | All Right Reserved
+						</span>
+
+						&nbsp; &nbsp;
+						<span class="action-buttons">
+							<%--<a href="https://twitter.com/SOFTMAXSOLUTION">
+								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+							</a>
+
+							<a href="https://www.facebook.com/SoftMaxSolutions">
+								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+							</a>
+
+							<a href="https://www.linkedin.com/in/softmaxsolutions">
+								<i class="ace-icon fa fa-linkedin-square text-primary bigger-150"></i>
+							</a>--%>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+    
+
+        <!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="assets1/js/jquery-2.1.4.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="assets1/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+		<script type="text/javascript">
+                    if ('ontouchstart' in document.documentElement) document.write("<script src='assets1/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+		</script>
+		<script src="assets1/js/bootstrap.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
+		<script src="assets1/js/ace-elements.min.js"></script>
+		<script src="assets1/js/ace.min.js"></script>
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+            jQuery(function ($) {
+                $('#sidebar2').insertBefore('.page-content');
+
+                $('.navbar-toggle[data-target="#sidebar2"]').insertAfter('#menu-toggler');
+
+
+                $(document).on('settings.ace.two_menu', function (e, event_name, event_val) {
+                    if (event_name == 'sidebar_fixed') {
+                        if ($('#sidebar').hasClass('sidebar-fixed')) {
+                            $('#sidebar2').addClass('sidebar-fixed');
+                            $('#navbar').addClass('h-navbar');
+                        }
+                        else {
+                            $('#sidebar2').removeClass('sidebar-fixed')
+                            $('#navbar').removeClass('h-navbar');
+                        }
+                    }
+                }).triggerHandler('settings.ace.two_menu', ['sidebar_fixed', $('#sidebar').hasClass('sidebar-fixed')]);
+            })
+		</script>
+          <script src="assets1/js/jquery-2.1.4.min.js"></script>
+
+    <script src="assets1/js/chosen.jquery.js"></script>
+    <script type="text/javascript"> $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({ allow_single_deselect: true }); </script>
+    </form>
+</body>
+</html>
